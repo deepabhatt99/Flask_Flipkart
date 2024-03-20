@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Results</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f7d4e5; /* Light pink background */
+      color: #333; /* Dark text color */
+    }
+
+    .navbar {
+      background-color: #e94c89 !important; /* Pink navbar */
+    }
+
+    .result-container {
+      background-color: #fce4ec; /* Light pink result container */
+      color: #333; /* Dark text color */
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    /* Adjust the color of the header */
+    .result-header {
+      background-color: #e94c89; /* Pink header */
+      color: #fff; /* White text color */
+      padding: 20px;
+      border-radius: 10px 10px 0 0; /* Rounded top corners */
+    }
+    
+    /* Adjust the color of "Product Tawa Sentiment Analysis" */
+    .navbar-brand-text {
+      color: #fff; /* White text color */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm">
+    <a class="navbar-brand" href="#"><b class="navbar-brand-text">Product Tawa Sentiment Analysis</b></a>
+  </nav>
+  <!-- Result Display -->
+  <div class="container result-container">
+    <!-- Header with pink background -->
+    <h2 class="result-header">
+      {% if prediction == 1 %}
+        Positive Review (Tawa product is good)
+      {% elif prediction == 0 %}
+        Negative Review (Tawa Product is bad)
+      {% endif %}
+    </h2>
+  </div>
+</body>
+</html>

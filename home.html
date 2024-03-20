@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    body {
+      background-color: #f7d4e5; /* Light pink background */
+      color: #333; /* Dark text color */
+    }
+
+    .navbar {
+      background-color: #e94c89 !important; /* Pink navbar */
+    }
+
+    .navbar-brand-text {
+      color: #fff; /* White text color */
+    }
+
+    .jumbotron {
+      background-color: #fce4ec; /* Light pink jumbotron */
+    }
+
+    .form-group label {
+      color: #e94c89; /* Pink label color */
+    }
+
+    .btn-primary {
+      background-color: #e94c89; /* Pink button */
+      border-color: #e94c89; /* Pink border */
+    }
+
+    .btn-primary:hover {
+      background-color: #d8396e; /* Darker pink on hover
+      border-color: #d8396e; /* Darker pink border on hover */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm">
+    <a class="navbar-brand" href="#"><b class="navbar-brand-text">Product Tawa Sentiment Analysis</b></a>
+  </nav>
+  <!-- Jumbotron -->
+  <div class="jumbotron text-center">
+    <h2><marquee behavior="alternate">Review Sentiment Analysis</marquee></h2>
+    <!-- Form for entering review -->
+    <div class="container">
+      <form action="{{ url_for('predict') }}" method="POST">
+        <div class="form-group">
+          <label for="Reviews">Enter Your Review Here</label>
+          <textarea name="Reviews" id="Reviews" rows="6" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Predict</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
